@@ -5,3 +5,10 @@ C:\Users\123\source\repos\lab2\t3\obj\Debug\t3.csprojAssemblyReference.cache
 C:\Users\123\source\repos\lab2\t3\obj\Debug\t3.csproj.CoreCompileInputs.cache
 C:\Users\123\source\repos\lab2\t3\obj\Debug\t3.exe
 C:\Users\123\source\repos\lab2\t3\obj\Debug\t3.pdb
+C:\kokosnew\lab2\t3\bin\Debug\t3.exe.config
+C:\kokosnew\lab2\t3\bin\Debug\t3.exe
+C:\kokosnew\lab2\t3\bin\Debug\t3.pdb
+C:\kokosnew\lab2\t3\obj\Debug\t3.csprojAssemblyReference.cache
+C:\kokosnew\lab2\t3\obj\Debug\t3.csproj.CoreCompileInputs.cache
+C:\kokosnew\lab2\t3\obj\Debug\t3.exe
+C:\kokosnew\lab2\t3\obj\Debug\t3.pdb

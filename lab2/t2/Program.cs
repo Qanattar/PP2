@@ -22,7 +22,7 @@ namespace t2
         }
         static void Main(string[] args)
         {
-            FileStream fs = new FileStream(@"C:\Users\123\source\repos\task2.txt", FileMode.Open, FileAccess.Read);
+            FileStream fs = new FileStream(@"C:\kokosnew\task2.txt", FileMode.Open, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
 
             string line = sr.ReadLine();
@@ -41,7 +41,7 @@ namespace t2
 
             }
             res.TrimStart();
-            FileStream fs2 = new FileStream(@"C:\Users\123\source\repos\task2res.txt", FileMode.OpenOrCreate, FileAccess.Write);
+            FileStream fs2 = new FileStream(@"C:\kokosnew\task2res.txt", FileMode.OpenOrCreate, FileAccess.Write);
             StreamWriter sw = new StreamWriter(fs2);
             sw.WriteLine(res);
             sw.Close();

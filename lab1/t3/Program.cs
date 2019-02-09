@@ -10,8 +10,8 @@ namespace t3
     {
         static void Main(string[] args)
         {
-            string line1 = Console.ReadLine();
-            int n = int.Parse(line1);
+            string line = Console.ReadLine();
+            int n = int.Parse(line);
             for (int i = 0; i < n; ++i)
             {
                 for (int j = n-1-i; j < n; ++j)

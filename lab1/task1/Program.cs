@@ -20,6 +20,8 @@ namespace task1
                     return false;
             return true;
         }
+
+
         static void Main(string[] args)
         {
             string line1 = Console.ReadLine();
@@ -30,19 +32,21 @@ namespace task1
             string res = "";
             int cnt;
             cnt = 0;
+
+
             for (int i = 0; i < numsStr.Length; ++i)
             {
                 int x = int.Parse(numsStr[i]);
                 if (Isprime(x)==true)
                 {
                     cnt++;
-                    res = res + " " + x;
+                    res = res + x + " ";
                 }
 
             }
             
              Console.WriteLine(cnt);
-            Console.WriteLine(res.TrimStart());
+            Console.WriteLine(res);
 
 
 

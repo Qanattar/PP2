@@ -1,0 +1,7 @@
+C:\kokosnew\lab1\t2\bin\Debug\t2.exe.config
+C:\kokosnew\lab1\t2\bin\Debug\t2.exe
+C:\kokosnew\lab1\t2\bin\Debug\t2.pdb
+C:\kokosnew\lab1\t2\obj\Debug\t3.csprojAssemblyReference.cache
+C:\kokosnew\lab1\t2\obj\Debug\t3.csproj.CoreCompileInputs.cache
+C:\kokosnew\lab1\t2\obj\Debug\t2.exe
+C:\kokosnew\lab1\t2\obj\Debug\t2.pdb

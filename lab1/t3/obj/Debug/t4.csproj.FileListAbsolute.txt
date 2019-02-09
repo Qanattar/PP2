@@ -1,0 +1,6 @@
+C:\kokosnew\lab1\t3\obj\Debug\t4.csproj.CoreCompileInputs.cache
+C:\kokosnew\lab1\t3\obj\Debug\t3.exe
+C:\kokosnew\lab1\t3\obj\Debug\t3.pdb
+C:\kokosnew\lab1\t3\bin\Debug\t3.exe.config
+C:\kokosnew\lab1\t3\bin\Debug\t3.exe
+C:\kokosnew\lab1\t3\bin\Debug\t3.pdb

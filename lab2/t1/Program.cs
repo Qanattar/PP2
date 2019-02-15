@@ -11,20 +11,20 @@ namespace t1
     {
         static bool pal(string s)
         {
+            // palindrom function test
             int length = s.Length;
             for (int i = 0; i < length / 2; i++)
             {
-                if (s[i] != s[length - i - 1])
-                    return false;
+                if (s[i] != s[length - i - 1])    // first <-----> last
+                    return false;       
             }
             return true;
         }
         static void Main(string[] args)
         {
-            FileStream fs = new FileStream(@"C:\Users\123\source\repos\task1.txt", FileMode.Open, FileAccess.Read);
-            StreamReader sr = new StreamReader(fs);
-
-            string line = sr.ReadLine();
+            FileStream fs = new FileStream(@"C:\kokosnew\task1.txt", FileMode.Open, FileAccess.Read);    // open .txt file with word
+            StreamReader sr = new StreamReader(fs); 
+            string line = sr.ReadLine();                    // rewrite word to new string
             if (pal(line)==true)
             {
                 Console.Write("Yes");

@@ -9,7 +9,7 @@ namespace t2
 {
     class Program {
         static bool Isprime(int n)
-        {
+        {  // prime function test
             if (n == 1 || n == 0)
             {
                 return false;
@@ -22,26 +22,26 @@ namespace t2
         }
         static void Main(string[] args)
         {
-            FileStream fs = new FileStream(@"C:\kokosnew\task2.txt", FileMode.Open, FileAccess.Read);
-            StreamReader sr = new StreamReader(fs);
+            FileStream fs = new FileStream(@"C:\kokosnew\task2.txt", FileMode.Open, FileAccess.Read);    // open .txt file with numders
+            StreamReader sr = new StreamReader(fs);                       
 
-            string line = sr.ReadLine();
+            string line = sr.ReadLine();          // rewrite array to new string
             sr.Close();
             fs.Close();
-            string res = "";
-
+            string res = "";          // create empty string to write the result
+            
             string[] num = line.Split();
             for (int i = 0; i < num.Length; ++i)
             {
-                int x = int.Parse(num[i]);
+                int x = int.Parse(num[i]);   //string -> int
                if (Isprime(x)==true)
                 {
                     res = res + x + " ";
                 }
 
             }
-            res.TrimStart();
-            FileStream fs2 = new FileStream(@"C:\kokosnew\task2res.txt", FileMode.OpenOrCreate, FileAccess.Write);
+           
+            FileStream fs2 = new FileStream(@"C:\kokosnew\task2res.txt", FileMode.OpenOrCreate, FileAccess.Write);   // crete (open) new .txt file to write result
             StreamWriter sw = new StreamWriter(fs2);
             sw.WriteLine(res);
             sw.Close();

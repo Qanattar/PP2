@@ -14,8 +14,8 @@ namespace task1
             {
                 return false;
             }
-            int sqrt = (int)Math.Sqrt(n);
-            for (int i = 2; i <= sqrt; i++) 
+           
+            for (int i = 2; i <= Math.Sqrt(n); i++)  // taking square root  of n using Math
                 if (n % i == 0)
                     return false;
             return true;
@@ -24,23 +24,23 @@ namespace task1
 
         static void Main(string[] args)
         {
-            string line1 = Console.ReadLine();
-            string line2 = Console.ReadLine();
+            string line1 = Console.ReadLine();  // amount of number in the array
+            string line2 = Console.ReadLine();  // array
 
-            int n = int.Parse(line1);
-            string[] numsStr = line2.Split();
-            string res = "";
-            int cnt;
+            int n = int.Parse(line1);   
+            string[] numsStr = line2.Split();   // array -> mini arrays
+            string res = "";   // create empty string 
+            int cnt;     // counter
             cnt = 0;
 
 
             for (int i = 0; i < numsStr.Length; ++i)
             {
-                int x = int.Parse(numsStr[i]);
-                if (Isprime(x)==true)
+                int x = int.Parse(numsStr[i]);   // string -> int
+                if (Isprime(x)==true) 
                 {
-                    cnt++;
-                    res = res + x + " ";
+                    cnt++; 
+                    res = res + x + " ";        // prime function test
                 }
 
             }

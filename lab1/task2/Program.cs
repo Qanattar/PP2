@@ -9,22 +9,23 @@ namespace Example4
     class Student
     {
         public string name;
-        public string year;
+        public int year;        // objects
         public string id;
-        public Student(string n, string y, string i)
+        public Student(string n, int y, string i)
         {
-            name = n;
-            year = y;
+            name = n; 
+            year = y;         // constructor
             id = i;
         }
         public void PrintInfo()
         {
-            Console.WriteLine(name + " " + id);
+            Console.WriteLine(name + " " + year);   // method
         }
-        public void PrintInfo2()
+        public void Increment()
         {
-            int x = int.Parse(year);
-            Console.WriteLine(x+1);
+            year = year + 1;    // method of increment
+ 
+            Console.WriteLine();
         }
 
     }
@@ -33,12 +34,14 @@ namespace Example4
     {
         static void Main(string[] args)
         {
-            Student s = new Student("Naruto", "1","1106");
-            Student s2 = new Student("Sasuke", "2","1105");
+            Student s = new Student("Naruto", 1,"1106");    
+            Student s2 = new Student("Sasuke",2,"1105");   
             s.PrintInfo();
             s2.PrintInfo();
-            s.PrintInfo2();
-            s2.PrintInfo2();
+            s.Increment();
+            s2.Increment();
+            s.PrintInfo();
+            s2.PrintInfo();
         }
     }
 }

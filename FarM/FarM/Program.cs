@@ -53,6 +53,7 @@ namespace FarManager2
 
         public void Draw()
         {
+            // подкрашивание выбранной папки\файла
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
             for (int i = 0; i < Content.Length; ++i)
@@ -72,22 +73,22 @@ namespace FarManager2
 
     enum FarMode
     {
-        FileView,
-        DirectoryView
+        FileView,      // 0
+        DirectoryView  // 1 
     }
 
     class Program
-    {
+    { 
         static void Main(string[] args)
         {
-            DirectoryInfo root = new DirectoryInfo(@"C:\kokos");
-            Stack<Layer> history = new Stack<Layer>();
+            DirectoryInfo root = new DirectoryInfo(@"C:\"); // link for our directory 
+            Stack<Layer> history = new Stack<Layer>();            // create stack 
             FarMode farMode = FarMode.DirectoryView;
 
             history.Push(
                 new Layer
                 {
-                    Content = root.GetFileSystemInfos(),
+                    Content = root.GetFileSystemInfos(),      // получаем данные о каталоге с помощью get-set
                     SelectedItem = 0
                 });
 
@@ -95,31 +96,31 @@ namespace FarManager2
             {
                 if (farMode == FarMode.DirectoryView)
                 {
-                    history.Peek().Draw();
+                    history.Peek().Draw();               // красим выбранную папку
                 }
                 ConsoleKeyInfo consoleKeyInfo = Console.ReadKey();
-                switch (consoleKeyInfo.Key)
+                switch (consoleKeyInfo.Key) 
                 {
-                    case ConsoleKey.UpArrow:
+                    case ConsoleKey.UpArrow:                                        // вверх
                         history.Peek().SelectedItem--;
                         break;
                     case ConsoleKey.DownArrow:
-                        history.Peek().SelectedItem++;
+                        history.Peek().SelectedItem++;                              // вниз
                         break;
-                    case ConsoleKey.Enter:
+                    case ConsoleKey.Enter:                                          // вход в папку или в файл
                         int x = history.Peek().SelectedItem;
                         FileSystemInfo fileSystemInfo = history.Peek().Content[x];
                         if (fileSystemInfo.GetType() == typeof(DirectoryInfo))
                         {
                             DirectoryInfo d = fileSystemInfo as DirectoryInfo;
-                            history.Push(new Layer { Content = d.GetFileSystemInfos(), SelectedItem = 0 });
+                            history.Push(new Layer { Content = d.GetFileSystemInfos(), SelectedItem = 0 });   // если папка, добавляем новую "историю" с информацией выбранной папки
                         }
                         else
                         {
                             farMode = FarMode.FileView;
-                            using (FileStream fs = new FileStream(fileSystemInfo.FullName, FileMode.Open, FileAccess.Read))
+                            using (FileStream fs = new FileStream(fileSystemInfo.FullName, FileMode.Open, FileAccess.Read))   //если файл, открываем его для чтения
                             {
-                                using (StreamReader sr = new StreamReader(fs))
+                                using (StreamReader sr = new StreamReader(fs))  
                                 {
                                     Console.BackgroundColor = ConsoleColor.White;
                                     Console.ForegroundColor = ConsoleColor.Black;
@@ -130,7 +131,7 @@ namespace FarManager2
                         }
                         break;
                     case ConsoleKey.Backspace:
-                        if (farMode == FarMode.DirectoryView)
+                        if (farMode == FarMode.DirectoryView)  // если папка, откатываем "историю" назад
                         {
                             history.Pop();
                         }
@@ -157,6 +158,8 @@ namespace FarManager2
                         }
                         history.Peek().SelectedItem--;
                         break;
+                    
+
                 }
             }
         }

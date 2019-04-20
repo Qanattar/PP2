@@ -13,7 +13,7 @@ namespace Snake
         System.Timers.Timer timer = new System.Timers.Timer(120);
         //System.Timers.Timer gameTime = new System.Timers.Timer(1000);
         Worm worm = new Worm('O');
-        Food food = new Food('@');
+        Food food = new Food('*');
         Wall wall = new Wall('#');
 
         public GameState()
